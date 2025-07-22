@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Barberena Bike Race XCM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles & Fonts */
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Specific Element Animations */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 1s ease-out forwards;
+            opacity: 0; /* Hidden by default */
+        }
+
+        .animate-zoom-in {
+            animation: zoomIn 0.8s ease-out forwards;
+            opacity: 0; /* Hidden by default */
+        }
+
+        /* Intersection Observer for scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .history-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .history-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* Tailwind Overrides/Customizations */
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-full { border-radius: 9999px; }
+
+        /* Custom hover effects for image titles */
+        .history-card .absolute p {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        /* Responsive video container - kept for consistency, though not used in HTML */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 1rem; /* Rounded corners for the video */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <!-- Header con Logo BBR -->
+    <header class="bg-white shadow-lg py-4 px-6 flex justify-center items-center sticky top-0 z-30">
+        <a href="index.html" class="flex items-center space-x-3">
+            <!-- Placeholder Image: Please replace with your actual logo URL -->
+            <img src="https://i.ibb.co/xHfcF2R/logo.png" alt="Logo Barberena Bike Race" class="w-20 md:w-24 rounded-full shadow-md animate-fade-in">
+            <h1 class="text-2xl md:text-3xl font-bold text-orange-600">Nuestra Historia</h1>
+        </a>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Sección Principal de la Historia -->
+        <section class="text-center mb-10 animate-slide-in-up">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">La Pasión que nos Impulsa</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                 Todo comenzó en un pequeño circuito de montaña. Con entusiasmo y unión, dimos el primer paso de lo que hoy es una gran tradición.
+            </p>
+        </section>
+
+        <!-- Secciones de la Historia por Año -->
+        <section class="history-section grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12 animate-on-scroll">
+            <div class="md:order-1 text-center md:text-left">
+                <h3 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">Nuestros Inicios: La Primera Carrera</h3>
+                <p class="text-lg text-gray-700">
+                        Empezamos con una pequeña carrera en las montañas. Éramos pocos, pero con muchas ganas. Con los años, más ciclistas se unieron y se volvió tradición.
+
+                </p>
+            </div>
+            <div class="md:order-2 relative overflow-hidden rounded-xl shadow-lg group">
+    <img loading="lazy" src="https://i.ibb.co/Nt5KxB9/nosotros0.jpg" alt="Imagen de nuestra primera carrera" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+        <p class="text-white text-xl font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+            Los Primeros Pedales (2010)
+        </p>
+        
+    </div>
+</div>
+        </section>
+
+        <section class="history-section grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12 animate-on-scroll">
+            <div class="md:order-2 text-center md:text-right">
+                <h3 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">Consolidación: El Año 2023</h3>
+                <p class="text-lg text-gray-700">
+    Fue un año inolvidable: récord de participación, organización impecable y el mejor ambiente. ¡Gracias por hacerlo posible!
+                </p>
+            </div>
+            <div class="md:order-1 relative overflow-hidden rounded-xl shadow-lg group ">
+                <!-- Placeholder Image: Please replace with your actual image URL for "2023" -->
+                <img src="https://i.ibb.co/cbcgLfW/Nosotros1-min.jpg" alt="Participantes de la carrera en 2023" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                    <p class="text-white text-xl font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        Un Hito en 2023
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12 animate-on-scroll">
+            <div class="md:order-1 text-center md:text-left">
+                <h3 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">El Presente: 2024 y Más Allá</h3>
+                <p class="text-lg text-gray-700">
+    Seguimos creciendo, pero nunca olvidamos nuestras raíces. Cada edición es mejor gracias a ustedes. ¡Lo mejor aún está por venir!
+                </p>
+            </div>
+            <div class="md:order-2 relative overflow-hidden rounded-xl shadow-lg group ">
+                <!-- Placeholder Image: Please replace with your actual image URL for "2024" -->
+                <img src="https://i.ibb.co/87S2VK4/Nosotros2-min.jpg" alt="Celebración en la carrera en 2024" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                    <p class="text-white text-xl font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        Crecimiento Continuo (2024)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Agradecimiento a Participantes -->
+        <section class="mb-12 py-16 bg-orange-500 text-white rounded-xl shadow-xl animate-on-scroll">
+            <div class="max-w-3xl mx-auto text-center px-4">
+                <h3 class="text-4xl md:text-5xl font-extrabold mb-6">¡Gracias, Ciclistas!</h3>
+                <p class="text-lg md:text-xl leading-relaxed">
+    Cada pedalada, cada llegada a la meta y cada aplauso nos inspiran. Esto no sería posible sin ustedes. <br class="hidden md:block"> ¡Gracias por hacer del Barberena Bike Race una experiencia épica cada año!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón flotante "Regresar al inicio" -->
+    <a href="index.html" id="back-to-home-btn"
+       class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-orange-600 text-white p-4 rounded-full shadow-xl 
+              flex items-center justify-center text-lg font-bold 
+              hover:bg-orange-700 transform hover:scale-110 transition-all duration-300 ease-in-out 
+              focus:outline-none focus:ring-4 focus:ring-orange-300 z-40">
+        <i class="fas fa-home text-xl"></i>
+    </a>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select elements for animation
+            const header = document.querySelector('header');
+            const mainIntroSection = document.querySelector('main section:first-of-type');
+            const historySections = document.querySelectorAll('.history-section');
+            const thankYouSection = document.querySelector('.bg-orange-500'); // Select the new thank you section
+            const backToHomeBtn = document.getElementById('back-to-home-btn');
+
+            // --- Header animation ---
+            // Header already has animate-fade-in on logo, no need for observer
+
+            // --- Main introduction section animation ---
+            mainIntroSection.classList.add('animate-slide-in-up');
+
+            // --- History sections and Thank You section animation on scroll ---
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        sectionObserver.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, { threshold: 0.2 }); // Trigger when 20% of the section is visible
+
+            historySections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Observe the new thank you section
+            sectionObserver.observe(thankYouSection);
+
+            // --- Back to Home Button Visibility ---
+            // Show/hide the back to home button based on scroll position
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) { // Show after scrolling down 200px
+                    backToHomeBtn.classList.remove('opacity-0', 'scale-0');
+                    backToHomeBtn.classList.add('opacity-100', 'scale-100');
+                } else {
+                    backToHomeBtn.classList.remove('opacity-100', 'scale-100');
+                    backToHomeBtn.classList.add('opacity-0', 'scale-0');
+                }
+            });
+
+            // Initial state for back to home button (hidden)
+            backToHomeBtn.classList.add('opacity-0', 'scale-0', 'transition-all', 'duration-300', 'ease-in-out');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción - Barberena Bike Race XCM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles & Fonts */
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* New animation for list items */
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Specific Element Animations */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 1s ease-out forwards;
+            opacity: 0; /* Hidden by default */
+        }
+
+        .animate-zoom-in {
+            animation: zoomIn 0.8s ease-out forwards;
+            opacity: 0; /* Hidden by default */
+        }
+
+        /* Intersection Observer for scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animation for individual list items */
+        .list-item-animate {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .list-item-animate.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        /* Tailwind Overrides/Customizations */
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-full { border-radius: 9999px; }
+
+        /* Custom styles for list items */
+        .list-item-icon {
+            color: #FF7F11; /* Orange color for icons */
+            min-width: 1.5rem; /* Ensure consistent spacing for icons */
+            text-align: center;
+        }
+
+        /* Ajustes específicos para móviles si fueran necesarios, aunque Tailwind ya es muy responsivo */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            /* Ajuste para el tamaño del Q250 en móviles */
+            .text-4xl.sm\:text-4xl {
+                font-size: 2.25rem; /* text-3xl for mobile */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <!-- Header con Logo BBR -->
+    <header class="bg-white shadow-lg py-4 px-6 flex justify-center items-center sticky top-0 z-30">
+        <a href="index.html" class="flex items-center space-x-3">
+            <!-- Se mantiene la URL original, con fallback a placeholder si no carga -->
+            <img src="https://i.ibb.co/xHfcF2R/logo.png" alt="Logo Barberena Bike Race" class="w-20 md:w-24 rounded-full shadow-md animate-fade-in" onerror="this.onerror=null;this.src='https://placehold.co/80x80/FF7F11/ffffff?text=LOGO';">
+            <h1 class="text-2xl md:text-3xl font-bold text-orange-600">Inscripción</h1>
+        </a>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Sección Principal de Inscripción -->
+        <section class="text-center mb-10 animate-slide-in-up">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">¡Inscripciones Abiertas para BBR 2025!</h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Prepárate para la aventura del 28 de Septiembre. Asegura tu lugar en la Barberena Bike Race XCM y sé parte de la emoción.
+            </p>
+        </section>
+
+        <!-- Detalles de Inscripción y Costo -->
+        <section class="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-12 animate-on-scroll">
+            <h3 class="text-3xl md:text-4xl font-bold text-orange-600 mb-6 text-center">Detalles de Inscripción</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-dollar-sign text-orange-600 mr-3"></i> Costo de Inscripción
+                    </h4>
+                    <!-- Ajuste de tamaño de fuente para móviles -->
+                    <p class="text-3xl sm:text-4xl font-extrabold text-orange-600 mb-4">Q250</p>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-university text-orange-600 mr-3"></i> Datos Bancarios
+                    </h4>
+                    <p class="text-lg text-gray-700">
+                        **Banco:** Bantrab<br>
+                        **Cuenta de Ahorro No.:** 1660106028<br>
+                        **A nombre de:** Gerardo Sánchez
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-clipboard-list text-orange-600 mr-3"></i> Proceso de Inscripción
+                    </h4>
+                    <ul class="text-lg text-gray-700 space-y-2 text-left mx-auto max-w-md">
+                        <li class="flex items-center list-item-animate"><i class="fas fa-check-circle list-item-icon mr-2"></i> Realizar depósito o transferencia.</li>
+                        <li class="flex items-center list-item-animate"><i class="fas fa-check-circle list-item-icon mr-2"></i> Llenar el formulario en línea.</li>
+                        <li class="flex items-center list-item-animate"><i class="fas fa-check-circle list-item-icon mr-2"></i> Adjuntar fotografía de la boleta.</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjGooObR2peb9KthLNV-Wp55BFxxpvf55V-g4ajl_gS0N2Qg/viewform?fbclid=IwY2xjawLrViBleHRuA2FlbQIxMABicmlkETFUT0JiZ1VmblZ2T1YwTE11AR7JBki7uGrAu6XNULMTiYmnBME5mzm4eIKsT_9H9w3MVZpetoe1FWl0_LcouA_aem_CV-aBdzVJhuekDhatFQyjQ" target="_blank" rel="noopener noreferrer"
+                       class="mt-8 inline-flex items-center justify-center px-8 py-4 bg-orange-600 text-white font-bold text-lg rounded-full shadow-lg 
+                              hover:bg-orange-700 transform hover:scale-105 transition-all duration-300 ease-in-out 
+                              focus:outline-none focus:ring-4 focus:ring-orange-300 animate-zoom-in">
+                        <i class="fas fa-file-alt mr-3"></i> Ir al Formulario de Inscripción
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ¿Qué incluye mi inscripción? -->
+        <section class="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-12 animate-on-scroll">
+            <h3 class="text-3xl md:text-4xl font-bold text-orange-600 mb-6 text-center">¿Qué incluye mi inscripción?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left text-gray-700">
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-bicycle list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Derecho a participar en el evento.</p>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-hashtag list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Número de corredor.</p>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-stopwatch list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Tiempos cronometrados con chip.</p>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-mountain list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Sticker de altimetría.</p>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-medal list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Medalla de finalista.</p>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-tint list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Derecho a puestos de abastecimiento.</p>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-briefcase list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Bolso del evento.</p>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-trophy list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Derecho a premiación en efectivo (primeros 3 lugares de cada categoría).</p>
+                </div>
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg shadow-sm list-item-animate">
+                    <i class="fas fa-gifts list-item-icon text-2xl mr-3 mt-1"></i>
+                    <p class="text-lg">Souvenirs de los patrocinadores.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorías -->
+        <section class="bg-white p-6 md:p-8 rounded-xl shadow-lg mb-12 animate-on-scroll">
+            <h3 class="text-3xl md:text-4xl font-bold text-orange-600 mb-6 text-center">Categorías</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="list-item-animate">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fas fa-road text-orange-600 mr-3"></i> 60 Kms.
+                    </h4>
+                    <ul class="text-lg text-gray-700 space-y-2 ml-8 list-disc">
+                        <li>Élite (Libre)</li>
+                        <li>Máster A (18-28)</li>
+                        <li>Máster B (29-38)</li>
+                        <li>Máster C (39-48)</li>
+                        <li>Máster D (+49)</li>
+                        <li>Juvenil (14-17)</li>
+                        <li>Femenina (Libre)</li>
+                    </ul>
+                </div>
+                <div class="list-item-animate">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fas fa-route text-orange-600 mr-3"></i> 25 Kms.
+                    </h4>
+                    <ul class="text-lg text-gray-700 space-y-2 ml-8 list-disc">
+                        <li>Principiantes (Libre)</li>
+                        <li>Travesía (Libre)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón flotante "Regresar al inicio" -->
+    <a href="index.html" id="back-to-home-btn"
+       class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-orange-600 text-white p-4 rounded-full shadow-xl 
+              flex items-center justify-center text-lg font-bold 
+              hover:bg-orange-700 transform hover:scale-110 transition-all duration-300 ease-in-out 
+              focus:outline-none focus:ring-4 focus:ring-orange-300 z-40">
+        <i class="fas fa-home text-xl"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+            const listItemAnimateElements = document.querySelectorAll('.list-item-animate'); // Select new elements
+            const backToHomeBtn = document.getElementById('back-to-home-btn'); // Corregido ID aquí
+
+            // Initial animation for the main title and intro paragraph
+            document.querySelector('main section:first-of-type').classList.add('animate-slide-in-up');
+
+            // Intersection Observer for section animations
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        sectionObserver.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+            animateOnScrollElements.forEach(element => {
+                sectionObserver.observe(element);
+            });
+
+            // Intersection Observer for individual list item animations (staggered effect)
+            const listItemObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Apply animation with a slight delay for a staggered effect
+                        const index = Array.from(listItemAnimateElements).indexOf(entry.target);
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, index * 100); // 100ms delay per item
+                        listItemObserver.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when 50% of the item is visible
+
+            listItemAnimateElements.forEach(element => {
+                listItemObserver.observe(element);
+            });
+
+
+            // Show/hide the back to home button based on scroll position
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) { // Show after scrolling down 200px
+                    backToHomeBtn.classList.remove('opacity-0', 'scale-0');
+                    backToHomeBtn.classList.add('opacity-100', 'scale-100');
+                } else {
+                    backToHomeBtn.classList.remove('opacity-100', 'scale-100');
+                    backToHomeBtn.classList.add('opacity-0', 'scale-0');
+                }
+            });
+
+            // Initial state for back to home button (hidden)
+            backToHomeBtn.classList.add('opacity-0', 'scale-0', 'transition-all', 'duration-300', 'ease-in-out');
+        });
+    </script>
+</body>
+</html>
